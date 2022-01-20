@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  .account-form-container {
+    @apply md:bg-white md:border rounded-sm flex flex-col;
+  }
+
   .btn-primary {
     @apply bg-accent text-white rounded px-2.5 py-1.5 text-sm font-semibold text-center active:bg-accent/70 disabled:active:bg-accent/70;
   }

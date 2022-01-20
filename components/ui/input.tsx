@@ -1,12 +1,26 @@
 import classNames from "classnames";
 import { InputHTMLAttributes, useState } from "react";
+import {
+  IoIosCheckmarkCircleOutline,
+  IoIosCloseCircleOutline,
+} from "react-icons/io";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   secureText?: boolean;
+  valid?: boolean;
+  touched?: boolean;
 }
 
-const Input = ({ label, type, value, secureText = false, ...rest }: Props) => {
+const Input = ({
+  label,
+  type,
+  value,
+  valid = false,
+  touched = false,
+  secureText = false,
+  ...rest
+}: Props) => {
   const [isHidden, setIsHidden] = useState(false);
   const [focus, setFocus] = useState(false);
 
@@ -46,6 +60,15 @@ const Input = ({ label, type, value, secureText = false, ...rest }: Props) => {
         />
       </label>
       <div className={classNames("pr-2 bg-zinc-50 flex items-center")}>
+        {touched &&
+          (valid ? (
+            <IoIosCheckmarkCircleOutline
+              size={24}
+              className="text-silver ml-2"
+            />
+          ) : (
+            <IoIosCloseCircleOutline size={24} className="text-red-500  ml-2" />
+          ))}
         {secureText && value && (
           <span
             className="ml-2 cursor-pointer"

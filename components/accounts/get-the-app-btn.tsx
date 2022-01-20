@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-const OtherApp = ({ alt, src, to, className }: Props) => {
+const GetTheAppBtn = ({ alt, src, to, className }: Props) => {
   return (
     <Link href={to} passHref>
       <a className="mr-2" target="_blank" rel="noreferrer">
@@ -18,4 +18,4 @@ const OtherApp = ({ alt, src, to, className }: Props) => {
   );
 };
 
-export default OtherApp;
+export default GetTheAppBtn;
