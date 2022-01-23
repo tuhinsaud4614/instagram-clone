@@ -8,11 +8,15 @@
   }
 
   .btn-primary {
-    @apply bg-accent text-white rounded px-2.5 py-1.5 text-sm font-semibold text-center active:bg-accent/70 disabled:active:bg-accent/70;
+    @apply bg-accent text-white rounded px-2.5 py-1.5 text-sm font-semibold text-center active:bg-accent/70 disabled:bg-accent/30;
   }
 
   .btn-text-primary {
-    @apply text-accent bg-white text-sm font-semibold text-center active:text-accent/70 disabled:active:bg-accent/70;
+    @apply text-accent bg-white text-sm font-semibold text-center active:text-accent/70 disabled:bg-accent/30;
+  }
+
+  .back-link {
+    @apply block active:opacity-70 text-neutral-800 text-center font-semibold text-sm;
   }
 }
 
