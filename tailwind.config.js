@@ -34,6 +34,27 @@ module.exports = {
         5.5: "1.375rem",
         6.5: "1.625rem",
       },
+      opacity: {
+        65: "0.65",
+      },
+      zIndex: {
+        100: "100",
+      },
+      animation: {
+        dialog: "dialog .1s ease-out",
+      },
+      keyframes: {
+        dialog: {
+          "0%": {
+            opacity: "0",
+            transform: "scale(1.2)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+      },
     },
   },
   plugins: [],

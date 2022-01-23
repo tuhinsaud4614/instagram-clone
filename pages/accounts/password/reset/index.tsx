@@ -4,6 +4,35 @@ import { VscLock } from "react-icons/vsc";
 import { AccountWrapper, OrDivider } from "../../../../components/accounts";
 import ResetPasswordForm from "../../../../components/reset-password/form";
 
+{
+  /* <Dialog
+        show={show}
+        onClose={() => setShow(false)}
+        footer={
+          <div className="pt-2.5 overflow-hidden">
+            <button
+              type="button"
+              style={{ minHeight: 48 }}
+              onClick={() => setShow(false)}
+              className="cursor-pointer block w-full px-2 py-1 text-center text-accent text-sm font-bold border border-sliver-200 active:bg-black/10"
+            >
+              OK
+            </button>
+          </div>
+        }
+      >
+        <div className="mx-8 mt-7 mb-4 flex flex-col">
+          <h3 className="text-neutral-800 font-semibold text-lg text-center">
+            SMS Sent
+          </h3>
+          <p className="text-silver pt-1 font-normal text-sm text-center">
+            We sent an SMS to +880 1751-912475 with a link to get back into your
+            account.
+          </p>
+        </div>
+      </Dialog> */
+}
+
 const PasswordReset = () => {
   return (
     <AccountWrapper showNavbar>
