@@ -9,7 +9,7 @@ interface Props {
 const Nav = ({ hideLinks = false, hideSearch = false }: Props) => {
   return (
     <nav className="flex items-center border border-col bg-white h-16">
-      <div className="flex justify-center flex-grow items-center px-5 max-w-screen-lg mx-auto">
+      <div className="flex justify-center flex-grow items-center px-5 max-w-screen-lg1 mx-auto">
         <div className="flex items-center flex-grow basis-32">
           <Logo />
         </div>

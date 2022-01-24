@@ -41,7 +41,7 @@ const ResetPasswordForm = () => {
             <div className="mx-11 mb-3.5">
               <button
                 type="submit"
-                className="btn-primary block w-full disabled:bg-accent/30"
+                className="btn-primary block w-full"
                 disabled={!dirty}
               >
                 Send Login Link

@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: { md1: "736px", lg1: "975px" },
       fontFamily: {
         sans: [
           ...defaultTheme.fontFamily.sans,
@@ -29,6 +30,10 @@ module.exports = {
         "my-blue-100": "#00376b",
       },
       spacing: {
+        15: "3.75rem",
+        65: "16.25rem",
+        90: "22.5rem",
+        100: "25rem",
         2.5: "0.625rem",
         4.5: "1.125rem",
         5.5: "1.375rem",

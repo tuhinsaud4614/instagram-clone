@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { VscLock } from "react-icons/vsc";
@@ -33,7 +34,7 @@ import ResetPasswordForm from "../../../../components/reset-password/form";
       </Dialog> */
 }
 
-const PasswordReset = () => {
+const PasswordReset: NextPage = () => {
   return (
     <AccountWrapper showNavbar>
       <Head>

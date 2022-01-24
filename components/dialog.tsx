@@ -1,7 +1,5 @@
-import classNames from "classnames";
 import { ReactChild } from "react";
 import { Portal } from ".";
-import styles from "../styles/Dialog.module.css";
 
 interface Props {
   header?: ReactChild;
@@ -22,7 +20,7 @@ const Dialog = ({ header, children, footer, show = false, onClose }: Props) => {
           }}
         >
           <div
-            className={classNames("m-5 max-h-[calc(100%-40px)]", styles.Root)}
+            className={"w-65 md1:w-100 m-5 max-h-[calc(100%-40px)]"}
             onClick={(e) => {
               e.stopPropagation();
             }}

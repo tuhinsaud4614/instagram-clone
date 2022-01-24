@@ -1,9 +1,0 @@
-.Root {
-  width: 260px;
-}
-
-@media (min-width: 736px) {
-  .Root {
-    width: 400px;
-  }
-}
