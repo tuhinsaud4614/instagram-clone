@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: { md1: "736px", lg1: "975px" },
+      screens: { sm1: "600px", sm2: "640px", md1: "736px", lg1: "975px" },
       fontFamily: {
         sans: [
           ...defaultTheme.fontFamily.sans,
@@ -26,6 +26,7 @@ module.exports = {
         "sliver-200": "#dbdbdb",
         "sliver-300": "#a8a8a8",
         accent: "#0095f6",
+        "accent-alt": "#ed4956",
         fb: "#385185",
         "my-blue-100": "#00376b",
       },
@@ -38,12 +39,16 @@ module.exports = {
         4.5: "1.125rem",
         5.5: "1.375rem",
         6.5: "1.625rem",
+        7.5: "1.875rem",
       },
       opacity: {
         65: "0.65",
       },
       zIndex: {
         100: "100",
+      },
+      boxShadow: {
+        menu: "0 0 5px 1px rgba(0, 0, 0, .0975)",
       },
       animation: {
         dialog: "dialog .1s ease-out",

@@ -18,7 +18,7 @@ const SearchBox = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    console.log("hello");
+    // console.log("hello");
 
     (async () => {
       setFetching(true);
