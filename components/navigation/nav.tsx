@@ -7,8 +7,8 @@ import {
 } from "react-icons/ai";
 import { BsChatDots, BsChatDotsFill } from "react-icons/bs";
 import { MdExplore, MdOutlineExplore } from "react-icons/md";
-import { NavFavorite, NavItem, NavUserAvatar } from ".";
-import { Logo, SearchBox } from "..";
+import { NavFavorite, NavItem, NavUserAvatar, SearchBox } from ".";
+import { Logo } from "..";
 
 interface Props {
   hideSearch?: boolean;

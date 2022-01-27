@@ -39,3 +39,13 @@
       scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 }
+
+.inst-ring {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%
+  );
+}

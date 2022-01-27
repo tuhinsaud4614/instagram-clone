@@ -13,7 +13,7 @@ const RecoveryLandingPage: NextPage = () => {
       </Head>
       <section className="mb-11 flex flex-col justify-center items-center flex-grow">
         <div
-          className="overflow-hidden mx-auto mt-15 border rounded-sm bg-white"
+          className="overflow-hidden mx-auto mt-[3.75rem] border rounded-sm bg-white"
           style={{ maxWidth: 935 }}
         >
           <div className="mt-5 mx-auto px-11 flex flex-col md1:p-11 md1:w-90 md1:m-auto">
