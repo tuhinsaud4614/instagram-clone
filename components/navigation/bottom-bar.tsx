@@ -14,7 +14,7 @@ const BottomBar = () => {
   const { pathname } = useRouter();
 
   return (
-    <nav className="sm2:hidden fixed bottom-0 left-0 right-0 bg-white h-11">
+    <nav className="sm2:hidden fixed bottom-0 left-0 right-0 bg-white h-11 border-t">
       <ul className="flex items-center list-none m-0 h-full">
         <NavItem to="/" className="flex-auto h-full active:opacity-50" after>
           {pathname === "/" ? (

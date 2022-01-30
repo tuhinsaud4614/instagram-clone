@@ -17,7 +17,7 @@ const list = [
 
 const Footer = () => {
   return (
-    <footer className="px-4 bg-zinc-50">
+    <footer className="hidden sm2:block px-4 bg-zinc-50">
       <div className="mt-6 mb-12">
         <ul className="list-none flex flex-wrap basis-auto justify-center">
           {list.map((item) => (
