@@ -10,10 +10,12 @@ interface Props {
   width?: number;
   height?: number;
   icon?: ReactNode;
+  activeStyle?: "border" | "gradient";
 }
 
 const Avatar = ({
   active = false,
+  activeStyle = "gradient",
   alt,
   height = 44,
   src,
@@ -24,9 +26,12 @@ const Avatar = ({
     <div className="relative flex items-center justify-center">
       {active && (
         <span
-          className={
-            "inst-ring rounded-full absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
-          }
+          className={classNames(
+            activeStyle === "border"
+              ? "border border-neutral-800"
+              : "inst-ring",
+            "rounded-full absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4"
+          )}
           style={{
             height: `${(height + 8) / 16}rem`,
             width: `${(width + 8) / 16}rem`,

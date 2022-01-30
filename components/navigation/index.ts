@@ -1,3 +1,4 @@
+export { default as BottomBar } from "./bottom-bar";
 export { default as Nav } from "./nav";
 export { default as NavFavorite } from "./nav-favorite";
 export { default as NavFavoriteItem } from "./nav-favorite-item";

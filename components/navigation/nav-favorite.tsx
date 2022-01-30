@@ -64,6 +64,7 @@ const NavFavorite = () => {
         onClick={(event: React.MouseEvent<HTMLElement>) => {
           setAnchorEle(event.currentTarget);
         }}
+        className="ml-5.5 first:ml-0"
       >
         {Boolean(anchorEle) ? (
           <AiFillHeart className="text-inherit" size={24} />

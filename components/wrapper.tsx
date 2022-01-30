@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Footer } from ".";
 import { Nav } from "./navigation";
+import BottomBar from "./navigation/bottom-bar";
 
 interface Props {
   children?: ReactNode;
@@ -17,6 +18,7 @@ const Wrapper = ({
     <section className="min-h-screen overflow-hidden flex flex-col">
       {showNavbar && <Nav />}
       <main className="flex flex-col flex-grow bg-zinc-50">{children}</main>
+      <BottomBar />
       {!hideFooter && <Footer />}
     </section>
   );

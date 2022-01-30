@@ -49,6 +49,14 @@ const histories: {
     title: "the_spicy",
     type: "user",
   },
+  {
+    id: "6",
+    slug: "the_spicy",
+    text: "ABC • Followed by the_spicy + 31 more",
+    title: "the_spicy",
+    type: "user",
+    verified: true,
+  },
 ];
 
 const SearchResultBox = () => {
