@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import { Fragment, ReactNode, useLayoutEffect, useRef, useState } from "react";
+import { ReactNode, useLayoutEffect, useRef, useState } from "react";
+import { Portal } from ".";
 
 interface Props {
   open: boolean;
@@ -55,7 +56,7 @@ const Menu = ({
   }
 
   return (
-    <Fragment>
+    <Portal>
       <div onClick={onClose} className="fixed z-50 inset-0" />
       <div
         ref={ref}
@@ -81,7 +82,7 @@ const Menu = ({
           {children}
         </section>
       </div>
-    </Fragment>
+    </Portal>
   );
 };
 

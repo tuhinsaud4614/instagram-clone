@@ -1,12 +1,30 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useLayoutEffect, useRef, useState } from "react";
 import { BsChatDots } from "react-icons/bs";
 import { FiCamera } from "react-icons/fi";
 import { Logo, Wrapper } from "../components";
+import { HomeRightBox } from "../components/home";
 import { AppBar } from "../components/navigation";
 
 const Home: NextPage = () => {
+  const [leftRect, setLeftRect] = useState<DOMRect | null>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const handler = () => {
+      if (leftRef.current) {
+        setLeftRect(leftRef.current.getBoundingClientRect());
+      }
+    };
+
+    handler();
+    window.addEventListener("resize", handler);
+
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+
   return (
     <Wrapper
       showNavbar
@@ -20,8 +38,10 @@ const Home: NextPage = () => {
           }
           title={<Logo />}
           actions={
-            <Link href="/direct/inbox" passHref>
-              <BsChatDots className="text-inherit" size={24} />
+            <Link href="/direct/inbox">
+              <a>
+                <BsChatDots className="text-inherit" size={24} />
+              </a>
             </Link>
           }
         />
@@ -30,67 +50,13 @@ const Home: NextPage = () => {
       <Head>
         <title>Instagram</title>
       </Head>
-      <section className="max-w-screen-sm1 sm2:max-w-screen-lg1 mx-auto sm2:px-5 w-full sm2:pt-7.5 flex flex-grow">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
-        illum tempore, explicabo laboriosam ipsam sit similique deleniti. Ullam,
-        ducimus accusamus. Quas vero iste ullam nostrum magni corporis veniam
-        dolore magnam. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Possimus dolores impedit enim cum veritatis deserunt dolore.
-        Exercitationem possimus odit vero. Debitis eos repudiandae
-        exercitationem optio inventore eveniet adipisci a provident? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo
-        atque, doloribus rerum facilis, modi voluptates similique illo nostrum
-        architecto quo tempore ea, cum itaque. Dolor perferendis sapiente. Lorem
-        ipsum dolor sit amet, consectetur adipisicing elit. Provident illum
-        tempore, explicabo laboriosam ipsam sit similique deleniti. Ullam,
-        ducimus accusamus. Quas vero iste ullam nostrum magni corporis veniam
-        dolore magnam. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Possimus dolores impedit enim cum veritatis deserunt dolore.
-        Exercitationem possimus odit vero. Debitis eos repudiandae
-        exercitationem optio inventore eveniet adipisci a provident? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo
-        atque, doloribus rerum facilis, modi voluptates similique illo nostrum
-        architecto quo tempore ea, cum itaque. Dolor perferendis sapiente Lorem
-        ipsum dolor sit amet, consectetur adipisicing elit. Provident illum
-        tempore, explicabo laboriosam ipsam sit similique deleniti. Ullam,
-        ducimus accusamus. Quas vero iste ullam nostrum magni corporis veniam
-        dolore magnam. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Possimus dolores impedit enim cum veritatis deserunt dolore.
-        Exercitationem possimus odit vero. Debitis eos repudiandae
-        exercitationem optio inventore eveniet adipisci a provident? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo
-        atque, doloribus rerum facilis, modi voluptates similique illo nostrum
-        architecto quo tempore ea, cum itaque. Dolor perferendis sapiente Lorem
-        ipsum dolor sit amet, consectetur adipisicing elit. Provident illum
-        tempore, explicabo laboriosam ipsam sit similique deleniti. Ullam,
-        ducimus accusamus. Quas vero iste ullam nostrum magni corporis veniam
-        dolore magnam. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Possimus dolores impedit enim cum veritatis deserunt dolore.
-        Exercitationem possimus odit vero. Debitis eos repudiandae
-        exercitationem optio inventore eveniet adipisci a provident? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo
-        atque, doloribus rerum facilis, modi voluptates similique illo nostrum
-        architecto quo tempore ea, cum itaque. Dolor perferendis sapiente Lorem
-        ipsum dolor sit amet, consectetur adipisicing elit. Provident illum
-        tempore, explicabo laboriosam ipsam sit similique deleniti. Ullam,
-        ducimus accusamus. Quas vero iste ullam nostrum magni corporis veniam
-        dolore magnam. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Possimus dolores impedit enim cum veritatis deserunt dolore.
-        Exercitationem possimus odit vero. Debitis eos repudiandae
-        exercitationem optio inventore eveniet adipisci a provident? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo
-        atque, doloribus rerum facilis, modi voluptates similique illo nostrum
-        architecto quo tempore ea, cum itaque. Dolor perferendis sapiente Lorem
-        ipsum dolor sit amet, consectetur adipisicing elit. Provident illum
-        tempore, explicabo laboriosam ipsam sit similique deleniti. Ullam,
-        ducimus accusamus. Quas vero iste ullam nostrum magni corporis veniam
-        dolore magnam. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Possimus dolores impedit enim cum veritatis deserunt dolore.
-        Exercitationem possimus odit vero. Debitis eos repudiandae
-        exercitationem optio inventore eveniet adipisci a provident? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatibus explicabo
-        atque, doloribus rerum facilis, modi voluptates similique illo nostrum
-        architecto quo tempore ea, cum itaque. Dolor perferendis sapiente
+      <section className="max-w-screen-sm1 lg2:max-w-[58.4375rem] mx-auto w-full sm2:pt-7.5 flex flex-grow flex-nowrap">
+        <div ref={leftRef} className="lg2:mr-7 max-w-[38.375rem] w-full">
+          Left
+        </div>
+        <HomeRightBox
+          left={leftRect ? `${leftRect.right / 16 + 1.75}rem` : undefined}
+        />
       </section>
     </Wrapper>
   );
