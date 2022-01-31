@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Avatar, ListTile } from "..";
+import SuggestionItem from "./suggestion-item";
 
 const SuggestionBox = () => {
   return (
@@ -13,55 +13,8 @@ const SuggestionBox = () => {
         </Link>
       </div>
       <ul className="py-2 flex flex-col list-none">
-        <li className="py-2 px-4">
-          <ListTile
-            classes={{ title: "text-sm", subtitle: "text-xs" }}
-            avatar={
-              <Link href="/the_spicy">
-                <a>
-                  <Avatar
-                    src="/avatar.jpeg"
-                    alt="Profile Picture"
-                    height={32}
-                    width={32}
-                  />
-                </a>
-              </Link>
-            }
-            title={
-              <Link href="/the_spicy">
-                <a className="active:opacity-50">the_spicy</a>
-              </Link>
-            }
-            subtitle="Suggested for you"
-            tail={<button className="btn-text-primary text-xs">Follow</button>}
-          />
-        </li>
-        <li className="py-2 px-4">
-          <ListTile
-            classes={{ title: "text-sm", subtitle: "text-xs" }}
-            avatar={
-              <Link href="/the_spicy">
-                <a>
-                  <Avatar
-                    src="/avatar.jpeg"
-                    alt="Profile Picture"
-                    height={32}
-                    width={32}
-                    active
-                  />
-                </a>
-              </Link>
-            }
-            title={
-              <Link href="/the_spicy">
-                <a className="active:opacity-50">the_spicy</a>
-              </Link>
-            }
-            subtitle="New to Instagram"
-            tail={<button className="btn-text-primary text-xs">Follow</button>}
-          />
-        </li>
+        <SuggestionItem />
+        <SuggestionItem />
       </ul>
     </section>
   );

@@ -6,6 +6,7 @@ interface Props {
   title: ReactNode;
   subtitle?: ReactNode;
   tail?: ReactNode;
+  body?: ReactNode;
   classes?: {
     root?: string;
     avatar?: string;
@@ -16,7 +17,7 @@ interface Props {
   };
 }
 
-const ListTile = ({ title, avatar, subtitle, tail, classes }: Props) => {
+const ListTile = ({ title, avatar, subtitle, tail, body, classes }: Props) => {
   return (
     <div className={classNames("flex items-center", classes?.root)}>
       {avatar && (
@@ -48,6 +49,7 @@ const ListTile = ({ title, avatar, subtitle, tail, classes }: Props) => {
             {subtitle}
           </p>
         )}
+        {body}
       </div>
       {tail && (
         <div className={classNames("ml-2 flex-shrink-0", classes?.tail)}>

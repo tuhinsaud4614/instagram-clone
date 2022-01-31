@@ -11,6 +11,10 @@
     @apply bg-accent text-white rounded px-2.5 py-1.5 text-sm font-semibold text-center active:bg-accent/70 disabled:bg-accent/30;
   }
 
+  .btn-outline {
+    @apply text-neutral-800 border rounded px-2.5 py-1.5 text-sm font-semibold text-center active:opacity-70 disabled:opacity-30;
+  }
+
   .btn-text-primary {
     @apply text-accent bg-white text-sm font-semibold text-center active:text-accent/70 disabled:bg-accent/30;
   }
