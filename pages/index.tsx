@@ -5,7 +5,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { BsChatDots } from "react-icons/bs";
 import { FiCamera } from "react-icons/fi";
 import { Logo, Wrapper } from "../components";
-import { HomeRightBox } from "../components/home";
+import { HomeRightBox, StoryBox } from "../components/home";
 import { AppBar } from "../components/navigation";
 
 const Home: NextPage = () => {
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       </Head>
       <section className="max-w-screen-sm1 lg2:max-w-[58.4375rem] mx-auto w-full sm2:pt-7.5 flex flex-grow flex-nowrap">
         <div ref={leftRef} className="lg2:mr-7 max-w-[38.375rem] w-full">
-          Left
+          <StoryBox />
         </div>
         <HomeRightBox
           left={leftRect ? `${leftRect.right / 16 + 1.75}rem` : undefined}

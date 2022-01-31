@@ -79,10 +79,7 @@ const NavFavorite = () => {
         }}
         anchorEle={anchorEle}
       >
-        <div
-          className="overflow-y-auto"
-          style={{ maxHeight: 362, minHeight: 100, width: 500 }}
-        >
+        <div className="overflow-y-auto w-[31.25rem] min-h-[6.25rem] max-h-[22.625rem]">
           <NavFavoriteItems title="This Week" list={[list[0]]} />
           <hr className="border w-full" />
           <NavFavoriteItems title="This Month" list={list} />

@@ -13,7 +13,7 @@ const Portal = ({ children }: Props) => {
   }, []);
 
   if (!mounted || !document.getElementById("presentational")) {
-    return null;
+    return children;
   }
 
   return ReactDom.createPortal(
