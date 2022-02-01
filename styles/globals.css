@@ -53,3 +53,7 @@
     #d6249f 60%
   );
 }
+
+.swiper-slide {
+  width: 80px !important;
+}

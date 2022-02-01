@@ -1,27 +1,46 @@
-import { Avatar } from "..";
+import { useRef } from "react";
+import { IoChevronBackCircle, IoChevronForwardCircle } from "react-icons/io5";
+import { Navigation, Virtual } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { StoryItem } from ".";
 
 const StoryBox = () => {
+  const prevRef = useRef<HTMLButtonElement | null>(null);
+  const nextRef = useRef<HTMLButtonElement | null>(null);
+
   return (
-    <div className="p-4 rounded-[0.1875rem] mb-6 border bg-white overflow-hidden">
-      <div className="flex items-center">
-        <ul className="list-none">
-          <li>
-            <button className="flex flex-col">
-              <Avatar
-                height={56}
-                width={56}
-                src="/avatar.jpeg"
-                alt="Profile Picture"
-                active
-              />
-              <span className="text-neutral-800 text-xs tracking-[.01em] text-ellipsis whitespace-nowrap inline-block mt-2 max-w-[4.625rem] overflow-hidden">
-                the_spicyggggg
-              </span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Swiper
+      modules={[Navigation, Virtual]}
+      navigation={{
+        prevEl: prevRef.current,
+        nextEl: nextRef.current,
+        disabledClass: "hidden",
+      }}
+      slidesPerGroup={3}
+      slidesPerView="auto"
+      className="px-2.5 py-4 rounded-[0.1875rem] mb-6 border"
+    >
+      <button
+        ref={prevRef}
+        className="w-[45px] h-[45px] absolute top-2/4 left-0 -translate-y-1/2 z-10 flex items-center justify-center"
+      >
+        <IoChevronBackCircle size={30} className="text-white drop-shadow-md" />
+      </button>
+      <button
+        ref={nextRef}
+        className="w-[45px] h-[45px] absolute top-2/4 right-0 -translate-y-1/2 z-10 flex items-center justify-center"
+      >
+        <IoChevronForwardCircle
+          size={30}
+          className="text-white drop-shadow-md"
+        />
+      </button>
+      {Array.from({ length: 21 }).map((_, index) => (
+        <SwiperSlide key={index} virtualIndex={index}>
+          <StoryItem own={index === 0} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
