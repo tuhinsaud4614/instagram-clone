@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useState } from "react";
+import { HomePostCardImage } from ".";
 import { Avatar, ListTile, MoreButton, ShortProfile } from "..";
 import { useShortProfile } from "../../hooks";
 import {
@@ -11,6 +11,14 @@ import {
   SaveIcon,
   ShareIcon,
 } from "../icons";
+
+const images: { id: string; src: string; alt: string }[] = Array.from({
+  length: 4,
+}).map((_, index) => ({
+  id: index.toString(),
+  alt: "Profile",
+  src: "avatar.jpeg",
+}));
 
 const PostCard = () => {
   const [like, setLike] = useState(false);
@@ -70,21 +78,9 @@ const PostCard = () => {
         </span>
       </header>
       <section className="w-full bg-silver-100">
-        <div className="relative pb-[125%]">
-          <div className="absolute left-0 top-0 w-full h-full">
-            <div className="w-full h-full relative">
-              <Image
-                src="/avatar.jpeg"
-                alt="Post"
-                layout="fill"
-                objectFit="cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
+        <HomePostCardImage images={images} />
       </section>
-      <footer className="flex flex-col bg-white">
+      <footer className="flex flex-col bg-white -mt-9">
         <div className="px-4 mt-1 pb-2 pt-1.5 flex items-center">
           <span className="inline-block -ml-2">
             <button

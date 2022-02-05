@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Fragment, ReactElement, ReactNode } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "../styles/globals.css";
 
 type NextPageWithLayout = NextPage & {

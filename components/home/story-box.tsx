@@ -36,7 +36,7 @@ const StoryBox = () => {
         />
       </button>
       {Array.from({ length: 21 }).map((_, index) => (
-        <SwiperSlide key={index} virtualIndex={index}>
+        <SwiperSlide key={index} virtualIndex={index} style={{ width: "80px" }}>
           <StoryItem own={index === 0} />
         </SwiperSlide>
       ))}
