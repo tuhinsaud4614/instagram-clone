@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { NavFavoriteItems, NavItem } from ".";
 import { Menu } from "..";
+import { HeartIcon } from "../icons";
 
 const list = [
   {
@@ -66,11 +66,12 @@ const NavFavorite = () => {
         }}
         className="ml-5.5 first:ml-0"
       >
-        {Boolean(anchorEle) ? (
-          <AiFillHeart className="text-inherit" size={24} />
-        ) : (
-          <AiOutlineHeart className="text-inherit" size={24} />
-        )}
+        <HeartIcon
+          className="text-neutral-800"
+          height={24}
+          width={24}
+          active={Boolean(anchorEle)}
+        />
       </NavItem>
       <Menu
         open={Boolean(anchorEle)}

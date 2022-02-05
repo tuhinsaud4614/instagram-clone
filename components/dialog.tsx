@@ -1,10 +1,10 @@
-import { ReactChild } from "react";
+import { ReactNode } from "react";
 import { Portal } from ".";
 
 interface Props {
-  header?: ReactChild;
-  children?: ReactChild;
-  footer?: ReactChild;
+  header?: ReactNode;
+  children?: ReactNode;
+  footer?: ReactNode;
   show: boolean;
   onClose?(): void;
 }
@@ -15,7 +15,8 @@ const Dialog = ({ header, children, footer, show = false, onClose }: Props) => {
       {show && (
         <div
           className="bg-black/65 fixed inset-0 flex justify-center items-center z-100 animate-dialog"
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             onClose && onClose();
           }}
         >

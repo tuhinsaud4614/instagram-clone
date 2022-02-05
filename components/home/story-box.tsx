@@ -18,7 +18,7 @@ const StoryBox = () => {
       }}
       slidesPerGroup={3}
       slidesPerView="auto"
-      className="px-2.5 py-4 rounded-[0.1875rem] mb-6 border"
+      className="bg-white px-2.5 py-4 rounded-[0.1875rem] sm2:mb-6 border-b sm2:border-x sm2:border-t"
     >
       <button
         ref={prevRef}

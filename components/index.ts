@@ -4,7 +4,7 @@ export { default as Footer } from "./footer";
 export { default as ListTile } from "./list-tile";
 export { default as Logo } from "./logo";
 export { default as Menu } from "./menu";
+export { default as MoreButton } from "./more-button";
 export { default as Portal } from "./portal";
 export { default as ShortProfile } from "./short-profile";
-export { default as Spinner } from "./spinner";
 export { default as Wrapper } from "./wrapper";

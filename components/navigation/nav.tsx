@@ -1,14 +1,7 @@
 import { useRouter } from "next/router";
-import {
-  AiFillHome,
-  AiFillPlusSquare,
-  AiOutlineHome,
-  AiOutlinePlusSquare,
-} from "react-icons/ai";
-import { BsChatDots, BsChatDotsFill } from "react-icons/bs";
-import { MdExplore, MdOutlineExplore } from "react-icons/md";
 import { NavFavorite, NavItem, NavUserAvatar, SearchBox } from ".";
 import { Logo } from "..";
+import { AddIcon, ExploreIcon, HomeIcon, MessengerIcon } from "../icons";
 
 interface Props {
   hideSearch?: boolean;
@@ -21,7 +14,7 @@ const Nav = ({ hideLinks = false, hideSearch = false }: Props) => {
 
   return (
     <nav className="hidden sm2:flex items-center h-[3.75rem]">
-      <div className="bg-white border-b fixed top-0 left-0 right-0 mx-auto h-15 flex items-center justify-center">
+      <div className="bg-white border-b z-100 fixed top-0 left-0 right-0 mx-auto h-15 flex items-center justify-center">
         <div className="max-w-screen-lg1 w-full flex justify-center flex-grow items-center px-5">
           <div className="flex items-center flex-grow basis-32">
             <Logo />
@@ -40,33 +33,32 @@ const Nav = ({ hideLinks = false, hideSearch = false }: Props) => {
           {!hideLinks && (
             <ul className="flex items-center justify-end flex-grow basis-32 pl-6 list-none m-0">
               <NavItem to="/" className="ml-5.5 first:ml-0" after>
-                {pathname === "/" ? (
-                  <AiFillHome className="text-inherit" size={24} />
-                ) : (
-                  <AiOutlineHome className="text-inherit" size={24} />
-                )}
+                <HomeIcon
+                  className="text-neutral-800"
+                  height={24}
+                  width={24}
+                  active={pathname === "/"}
+                />
               </NavItem>
 
               <NavItem to="/direct/inbox" className="ml-5.5 first:ml-0">
-                {pathname === "/direct/inbox" ? (
-                  <BsChatDotsFill className="text-inherit" size={24} />
-                ) : (
-                  <BsChatDots className="text-inherit" size={24} />
-                )}
+                <MessengerIcon
+                  className="text-neutral-800"
+                  height={24}
+                  width={24}
+                  active={pathname === "/direct/inbox"}
+                />
               </NavItem>
               <NavItem to="/create/select" className="ml-5.5 first:ml-0">
-                {pathname === "/create/inbox" ? (
-                  <AiFillPlusSquare className="text-inherit" size={24} />
-                ) : (
-                  <AiOutlinePlusSquare className="text-inherit" size={24} />
-                )}
+                <AddIcon className="text-neutral-800" height={24} width={24} />
               </NavItem>
               <NavItem to="/explore" className="ml-5.5 first:ml-0">
-                {pathname === "/explore" ? (
-                  <MdExplore className="text-inherit" size={24} />
-                ) : (
-                  <MdOutlineExplore className="text-inherit" size={24} />
-                )}
+                <ExploreIcon
+                  className="text-neutral-800"
+                  height={24}
+                  width={24}
+                  active={pathname === "/explore"}
+                />
               </NavItem>
               {/* <NavItem to="/accounts/activity">
               {pathname === "/accounts/activity" ? (

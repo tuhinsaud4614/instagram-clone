@@ -1,19 +1,15 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import ReactDom from "react-dom";
 
 interface Props {
   children: ReactNode;
 }
 
+const isBrowser = typeof window !== "undefined";
+
 const Portal = ({ children }: Props) => {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted || !document.getElementById("presentational")) {
-    return children;
+  if (!isBrowser) {
+    return null;
   }
 
   return ReactDom.createPortal(

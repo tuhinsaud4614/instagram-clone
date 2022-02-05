@@ -14,11 +14,15 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head />
         <body>
           <Main />
-          <div id="presentational" role="presentation"></div>
+          <div
+            id="presentational"
+            className="relative"
+            role="presentation"
+          ></div>
           <NextScript />
         </body>
       </Html>

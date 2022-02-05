@@ -58,6 +58,8 @@ module.exports = {
       },
       animation: {
         dialog: "dialog .1s ease-out",
+        spinner: "spinner 1.2s steps(12) infinite",
+        like: "like .45s ease-in-out",
       },
       keyframes: {
         dialog: {
@@ -67,6 +69,28 @@ module.exports = {
           },
           "100%": {
             opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        spinner: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+        like: {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "25%": {
+            transform: "scale(1.2)",
+          },
+          "50%": {
+            transform: "scale(.95)",
+          },
+          "100%": {
             transform: "scale(1)",
           },
         },

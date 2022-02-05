@@ -1,6 +1,7 @@
 import classNames from "classnames";
-import { ReactNode, useLayoutEffect, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import { Portal } from ".";
+import { useIsomorphicLayoutEffect } from "../utils";
 
 interface Props {
   open: boolean;
@@ -23,7 +24,7 @@ const Menu = ({
   const [menuRect, setMenuRect] = useState<DOMRect | null>(null);
   const ref = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const handler = () => {
       if (ref.current) {
         setMenuRect(ref.current.getBoundingClientRect());

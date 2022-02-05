@@ -22,6 +22,10 @@
   .back-link {
     @apply block active:opacity-70 text-neutral-800 text-center font-semibold text-sm;
   }
+
+  .dialog-btn {
+    @apply cursor-pointer px-2 py-1 text-sm font-bold active:bg-black/10;
+  }
 }
 
 @layer utilities {
