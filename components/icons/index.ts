@@ -1,4 +1,5 @@
 export { default as AddIcon } from "./add";
+export { default as AudioIcon } from "./audio";
 export { default as CameraIcon } from "./camera";
 export { default as CommentIcon } from "./comment";
 export { default as EmojiIcon } from "./emoji";

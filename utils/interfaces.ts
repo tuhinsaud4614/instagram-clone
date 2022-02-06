@@ -11,3 +11,30 @@ export interface IFooterClasses {
 export interface IIcon extends SVGProps<SVGSVGElement> {
   active?: boolean;
 }
+
+export interface IUser {
+  fullName: string;
+  id: string;
+  isVerified: boolean;
+  profilePictureUrl: string;
+  username: string;
+}
+
+export interface IResource {
+  height: number;
+  width: number;
+  src: string;
+  type: "image" | "video";
+}
+
+export interface IPost {
+  caption: string;
+  id: string;
+  likers: IUser[];
+  numComments: number;
+  numLikes: number;
+  owner: IUser;
+  resources: IResource[];
+  thumbnailSrc?: string;
+  postedAt: number;
+}
