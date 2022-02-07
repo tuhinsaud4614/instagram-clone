@@ -11,6 +11,10 @@ interface Props {
   height?: number;
   icon?: ReactNode;
   activeStyle?: "border" | "gradient";
+  classes?: {
+    root?: string;
+    container?: string;
+  };
 }
 
 const Avatar = ({
@@ -21,9 +25,15 @@ const Avatar = ({
   src,
   width = 44,
   icon,
+  classes,
 }: Props) => {
   return (
-    <div className="relative flex items-center justify-center">
+    <div
+      className={classNames(
+        "relative flex items-center justify-center",
+        classes?.container
+      )}
+    >
       {active && (
         <span
           className={classNames(
@@ -42,7 +52,8 @@ const Avatar = ({
         className={classNames(
           "rounded-full z-10 relative flex items-center justify-center bg-white",
           (icon || !src) && "border",
-          active && "p-0.5"
+          active && "p-0.5",
+          classes?.root
         )}
         style={
           active

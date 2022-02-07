@@ -5,6 +5,7 @@ export const demoPosts: IPost[] = [
     caption:
       "𝗧𝗛𝗘 𝗧𝗘𝗔𝗠\n Els dorsals del primer equip 👀 \n ¡Así quedan los dorsales! 👉",
     id: "abc",
+    slug: "abc",
     likers: [
       {
         fullName: "The Spicy",
@@ -23,13 +24,6 @@ export const demoPosts: IPost[] = [
       {
         fullName: "The Moon",
         id: "3",
-        isVerified: true,
-        profilePictureUrl: "avatar.jpeg",
-        username: "the_moon",
-      },
-      {
-        fullName: "The Moon",
-        id: "4",
         isVerified: true,
         profilePictureUrl: "avatar.jpeg",
         username: "the_moon",
@@ -65,6 +59,7 @@ export const demoPosts: IPost[] = [
       #tiktok_gf# fffyem
       @the_now.ffv@  ggg gfff`,
     id: "cde",
+    slug: "cde",
     likers: [
       {
         fullName: "The Spicy",
@@ -83,13 +78,6 @@ export const demoPosts: IPost[] = [
       {
         fullName: "The Moon",
         id: "3",
-        isVerified: true,
-        profilePictureUrl: "avatar.jpeg",
-        username: "the_moon",
-      },
-      {
-        fullName: "The Moon",
-        id: "4",
         isVerified: true,
         profilePictureUrl: "avatar.jpeg",
         username: "the_moon",
@@ -119,36 +107,8 @@ export const demoPosts: IPost[] = [
       #tiktok_gf fffyem
       @the_now.ffv  ggg gfff`,
     id: "fgh",
-    likers: [
-      {
-        fullName: "The Spicy",
-        id: "1",
-        isVerified: true,
-        profilePictureUrl: "avatar.jpeg",
-        username: "the_spicy",
-      },
-      {
-        fullName: "The Moon",
-        id: "2",
-        isVerified: true,
-        profilePictureUrl: "avatar.jpeg",
-        username: "the_moon",
-      },
-      {
-        fullName: "The Moon",
-        id: "3",
-        isVerified: true,
-        profilePictureUrl: "avatar.jpeg",
-        username: "the_moon",
-      },
-      {
-        fullName: "The Moon",
-        id: "4",
-        isVerified: true,
-        profilePictureUrl: "avatar.jpeg",
-        username: "the_moon",
-      },
-    ],
+    slug: "fgh",
+    likers: [],
     numComments: 11,
     numLikes: 10,
     owner: {

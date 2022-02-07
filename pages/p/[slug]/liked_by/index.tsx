@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Fragment, ReactElement } from "react";
-import { Logo, Wrapper } from "../../components";
-import { CameraIcon, MessengerIcon } from "../../components/icons";
-import { AppBar } from "../../components/navigation";
+import { Logo, Wrapper } from "../../../../components";
+import { CameraIcon, MessengerIcon } from "../../../../components/icons";
+import { AppBar } from "../../../../components/navigation";
 
-Post.getLayout = (page: ReactElement) => {
+LikedBy.getLayout = (page: ReactElement) => {
   return (
     <Wrapper
       showNavbar
@@ -36,6 +36,6 @@ Post.getLayout = (page: ReactElement) => {
   );
 };
 
-export default function Post() {
-  return <Fragment>Post</Fragment>;
+export default function LikedBy() {
+  return <Fragment>LikedBy</Fragment>;
 }

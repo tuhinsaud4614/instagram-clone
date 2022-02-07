@@ -5,7 +5,7 @@ const PostCommentForm = () => {
     <section className="hidden px-4 py-1.5 border-t md1:flex items-center">
       <form className="flex items-center w-full">
         <span className="flex items-center justify-center py-2 pr-4">
-          <button>
+          <button type="button">
             <EmojiIcon
               color={"rgb(38, 38, 38)"}
               fill={"rgb(38, 38, 38)"}

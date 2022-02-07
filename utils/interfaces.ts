@@ -30,6 +30,7 @@ export interface IResource {
 export interface IPost {
   caption: string;
   id: string;
+  slug: string;
   likers: IUser[];
   numComments: number;
   numLikes: number;

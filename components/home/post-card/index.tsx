@@ -7,14 +7,7 @@ import PostCardCaption from "./post-card-caption";
 import PostCardHeader from "./post-card-header";
 import PostCarousel from "./post-carousel";
 import PostCommentForm from "./post-comment-form";
-
-const images: { id: string; src: string; alt: string }[] = Array.from({
-  length: 4,
-}).map((_, index) => ({
-  id: index.toString(),
-  alt: "Profile",
-  src: "avatar.jpeg",
-}));
+import PostLikeBox from "./post-like-box";
 
 interface Props {
   post: IPost;
@@ -25,7 +18,7 @@ const PostCard = ({ post }: Props) => {
   const [save, setSave] = useState(false);
 
   return (
-    <article className="mb-[0.9375rem] last-of-type:mb-0 sm2:mb-15 sm2:border sm2:rounded-[0.1875rem]">
+    <article className="mb-[0.9375rem] last-of-type:mb-0 sm2:mb-6 sm2:border sm2:rounded-[0.1875rem]">
       <PostCardHeader />
       <section className="w-full bg-silver-100">
         <PostCarousel
@@ -95,15 +88,11 @@ const PostCard = ({ post }: Props) => {
           </div>
         </div>
 
-        <div className="flex items-center px-4 mb-2">
-          <button className="text-sm font-semibold text-neutral-800">
-            10,300 likes
-          </button>
-        </div>
+        <PostLikeBox post={post} />
         <PostCardCaption caption={post.caption} />
         {/* comments button start */}
         <div className="px-4 mb-1 flex">
-          <Link href="/p/abc">
+          <Link href="/p/abc/">
             <a className="text-sm text-silver font-normal">
               View all 212 comments
             </a>
