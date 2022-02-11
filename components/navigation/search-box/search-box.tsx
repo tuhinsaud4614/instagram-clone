@@ -9,7 +9,8 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { IoIosCloseCircle } from "react-icons/io";
 import { SearchResultBox } from "..";
-import { Menu, Spinner } from "../..";
+import { Menu } from "../..";
+import { Spinner } from "../../icons";
 
 const fakePromise = new Promise((res, _) => {
   setTimeout(() => {
@@ -54,7 +55,7 @@ const SearchBox = () => {
           setAnchorEle(null);
         }}
         anchorEle={anchorEle}
-        anchorOrigin="center"
+        anchorOrigin={{ horizontal: "center" }}
       >
         <div className="w-[375px] h-[362px] pt-3 overflow-x-hidden overflow-y-auto">
           <SearchResultBox />

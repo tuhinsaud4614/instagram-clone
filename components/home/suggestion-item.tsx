@@ -46,6 +46,7 @@ const SuggestionItem = () => {
         contentHover={contentHover}
         contentHoverOut={contentHoverOut}
         anchorEle={anchorEle}
+        anchorOrigin={{ horizontal: "left" }}
       />
     </li>
   );

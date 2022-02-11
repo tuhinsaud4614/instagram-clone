@@ -37,6 +37,7 @@ const NavUserAvatar = () => {
           setAnchorEle(null);
         }}
         anchorEle={anchorEle}
+        fraction
       >
         <ul className="list-none m-0 p-0">
           <NavUserAvatarItem

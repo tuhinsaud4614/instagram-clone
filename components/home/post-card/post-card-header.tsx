@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { Avatar, ListTile, MoreButton, ShortProfile } from "../..";
 import { useShortProfile } from "../../../hooks";
+import { IUser } from "../../../utils/interfaces";
 
-const PostCardHeader = () => {
+interface Props {
+  owner: IUser;
+}
+
+const PostCardHeader = ({ owner }: Props) => {
   const {
     anchorEle,
     anchorHover,
@@ -20,10 +25,10 @@ const PostCardHeader = () => {
           subtitle: "text-xs",
         }}
         avatar={
-          <Link href="/the_spicy">
+          <Link href={`/${owner.id}`}>
             <a onMouseEnter={anchorHover} onMouseLeave={anchorHoverOut}>
               <Avatar
-                src="/avatar.jpeg"
+                src={`/${owner.profilePictureUrl}`}
                 alt="Profile Picture"
                 height={32}
                 width={32}
@@ -33,13 +38,13 @@ const PostCardHeader = () => {
           </Link>
         }
         title={
-          <Link href="/the_spicy">
+          <Link href={`/${owner.id}`}>
             <a
               className="active:opacity-50 "
               onMouseEnter={anchorHover}
               onMouseLeave={anchorHoverOut}
             >
-              the_spicy
+              {owner.username}
             </a>
           </Link>
         }
@@ -48,7 +53,7 @@ const PostCardHeader = () => {
         contentHover={contentHover}
         contentHoverOut={contentHoverOut}
         anchorEle={anchorEle}
-        anchorOrigin="left"
+        anchorOrigin={{ horizontal: "left" }}
         followed
       />
       <span className="pr-2 flex items-center justify-center">

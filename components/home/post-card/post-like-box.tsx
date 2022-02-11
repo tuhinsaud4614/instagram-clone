@@ -32,15 +32,14 @@ const PostLikeBox = ({ post }: Props) => {
                 <span
                   key={liker.id}
                   className={classNames(
-                    "inline-block relative -z-10 rounded-full",
-                    `order-${likersLen - 1 - index}`,
+                    "block relative rounded-full",
                     index === 0
                       ? "h-5 w-5"
-                      : "border-2 h-6 w-6 border-white -mr-[0.3125rem]"
+                      : "border-2 h-6 w-6 border-white -ml-[0.3125rem]"
                   )}
                 >
                   <Image
-                    src="/avatar.jpeg"
+                    src={`/${post.likers[index].profilePictureUrl}`}
                     alt="Avatar"
                     height={20}
                     width={20}

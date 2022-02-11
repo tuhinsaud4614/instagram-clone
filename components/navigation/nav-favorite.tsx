@@ -79,6 +79,7 @@ const NavFavorite = () => {
           setAnchorEle(null);
         }}
         anchorEle={anchorEle}
+        fraction
       >
         <div className="overflow-y-auto w-[31.25rem] min-h-[6.25rem] max-h-[22.625rem]">
           <NavFavoriteItems title="This Week" list={[list[0]]} />

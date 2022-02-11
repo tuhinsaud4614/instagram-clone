@@ -19,7 +19,7 @@ const PostCard = ({ post }: Props) => {
 
   return (
     <article className="mb-[0.9375rem] last-of-type:mb-0 sm2:mb-6 sm2:border sm2:rounded-[0.1875rem]">
-      <PostCardHeader />
+      <PostCardHeader owner={post.owner} />
       <section className="w-full bg-silver-100">
         <PostCarousel
           resources={post.resources}
@@ -92,7 +92,7 @@ const PostCard = ({ post }: Props) => {
         <PostCardCaption caption={post.caption} />
         {/* comments button start */}
         <div className="px-4 mb-1 flex">
-          <Link href="/p/abc/">
+          <Link href={`/p/${post.slug}/comments`}>
             <a className="text-sm text-silver font-normal">
               View all 212 comments
             </a>

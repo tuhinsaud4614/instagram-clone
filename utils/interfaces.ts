@@ -39,3 +39,8 @@ export interface IPost {
   thumbnailSrc?: string;
   postedAt: number;
 }
+
+export interface IAnchorOrigin {
+  horizontal?: "center" | "right" | "left";
+  vertical?: "bottom" | "top";
+}
