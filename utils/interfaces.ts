@@ -20,6 +20,13 @@ export interface IUser {
   username: string;
 }
 
+export interface ITag {
+  posts: number;
+  title: string;
+  slug: string;
+  id: string;
+}
+
 export interface IResource {
   height: number;
   width: number;

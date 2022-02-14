@@ -28,7 +28,7 @@ const PostLikeBox = ({ post }: Props) => {
         <Link href={`/p/${post.slug}/liked_by`}>
           <a className="block overflow-hidden text-ellipsis whitespace-nowrap">
             <div className="flex items-center">
-              {post.likers.map((liker, index) => (
+              {post.likers.slice(0, 3).map((liker, index) => (
                 <span
                   key={liker.id}
                   className={classNames(

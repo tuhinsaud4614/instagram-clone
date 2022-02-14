@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ReactNode, useRef, useState } from "react";
+import { memo, ReactNode, useEffect, useRef, useState } from "react";
 import { Portal } from ".";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { IAnchorOrigin } from "../utils/interfaces";
@@ -28,21 +28,23 @@ const getPositions = (
     FRACTION = typeof fraction === "boolean" ? 0.11 : fraction;
   }
 
-  if (anchorRect && selfRect) {
-    selfLeft = anchorRect.left - selfRect.width * FRACTION;
+  if (anchorRect) {
+    const selfWidth = selfRect ? selfRect.width : 0;
+    const selfHeight = selfRect ? selfRect.height : 0;
+    selfLeft = anchorRect.left - selfWidth * FRACTION;
     selfTop = hideArrow ? anchorRect.bottom : anchorRect.bottom + ARROW_SIZE;
 
     arrowLeft = anchorRect.left + (anchorRect.width / 2 - ARROW_SIZE / 2);
     arrowTop = anchorRect.bottom + ARROW_SIZE / 2;
 
     if (anchorOrigin.horizontal === "center") {
-      selfLeft = anchorRect.left - (selfRect.width - anchorRect.width) / 2;
+      selfLeft = anchorRect.left - (selfWidth - anchorRect.width) / 2;
     } else if (anchorOrigin.horizontal === "right") {
-      selfLeft = anchorRect.right - selfRect.width * FRACTION;
+      selfLeft = anchorRect.right - selfWidth * FRACTION;
     }
 
     if (anchorOrigin.vertical === "top") {
-      selfTop = anchorRect.top - selfRect.height - (hideArrow ? 0 : ARROW_SIZE);
+      selfTop = anchorRect.top - selfHeight - (hideArrow ? 0 : ARROW_SIZE);
       arrowTop = anchorRect.top - ARROW_SIZE * 1.5;
     }
   }
@@ -83,14 +85,10 @@ const Menu = ({
 }: Props) => {
   const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null);
   const [selfRect, setSelfRect] = useState<DOMRect | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const handler = () => {
-      if (ref.current) {
-        setSelfRect(ref.current.getBoundingClientRect());
-      }
-
       if (anchorEle) {
         setAnchorRect(anchorEle.getBoundingClientRect());
       }
@@ -105,6 +103,12 @@ const Menu = ({
       window.removeEventListener("scroll", handler);
     };
   }, [anchorEle]);
+
+  useEffect(() => {
+    if (open && ref.current) {
+      setSelfRect(ref.current.getBoundingClientRect());
+    }
+  }, [open]);
 
   if (!open) {
     return null;
@@ -126,7 +130,7 @@ const Menu = ({
           className={classNames("fixed z-[900] inset-0", classes?.backdrop)}
         />
       )}
-      <div
+      <section
         ref={ref}
         className={classNames(
           "fixed z-[910] bg-white shadow-menu rounded-md",
@@ -149,17 +153,17 @@ const Menu = ({
             }}
           />
         )}
-        <section
+        <div
           className={classNames(
             "relative z-10 w-full h-full bg-white rounded-md overflow-hidden",
             classes?.container
           )}
         >
           {children}
-        </section>
-      </div>
+        </div>
+      </section>
     </Portal>
   );
 };
 
-export default Menu;
+export default memo(Menu, (prev, next) => prev.open === next.open);

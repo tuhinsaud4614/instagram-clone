@@ -6,7 +6,7 @@ import { CommentIcon, HeartIcon, SaveIcon, ShareIcon } from "../../icons";
 import PostCardCaption from "./post-card-caption";
 import PostCardHeader from "./post-card-header";
 import PostCarousel from "./post-carousel";
-import PostCommentForm from "./post-comment-form";
+import PostCommentBox from "./post-comment-box";
 import PostLikeBox from "./post-like-box";
 
 interface Props {
@@ -150,7 +150,7 @@ const PostCard = ({ post }: Props) => {
           </time>
         </div>
         {/* time end */}
-        <PostCommentForm />
+        <PostCommentBox />
       </footer>
     </article>
   );
