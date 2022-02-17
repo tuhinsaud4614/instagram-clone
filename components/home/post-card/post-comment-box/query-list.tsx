@@ -1,6 +1,6 @@
 import classNames from "classnames";
+import { ITag, IUser } from "../../../../utils";
 import { demoTags, demoUsers } from "../../../../utils/demo-data";
-import { ITag, IUser } from "../../../../utils/interfaces";
 import { Spinner } from "../../../icons";
 import PostCommentQueryItem from "./query-item";
 

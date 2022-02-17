@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { Avatar, ListTile, Menu } from ".";
-import { IAnchorOrigin } from "../utils/interfaces";
+import { IAnchorOrigin } from "../utils";
 
 interface Props {
   followed?: boolean;

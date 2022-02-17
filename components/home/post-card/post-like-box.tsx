@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
-import { IPost } from "../../../utils/interfaces";
+import { IPost } from "../../../utils";
 
 interface Props {
   post: IPost;

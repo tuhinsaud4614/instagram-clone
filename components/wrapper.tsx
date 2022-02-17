@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import { Footer } from ".";
-import { IFooterClasses } from "../utils/interfaces";
-import { Nav } from "./navigation";
-import BottomBar from "./navigation/bottom-bar";
+import { IFooterClasses } from "../utils";
+import { BottomBar, Nav } from "./navigation";
 
 interface Props {
   children?: ReactNode;

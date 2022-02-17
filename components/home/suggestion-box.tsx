@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SuggestionItem from "./suggestion-item";
+import { HomeSuggestionItem } from ".";
 
 const SuggestionBox = () => {
   return (
@@ -13,8 +13,8 @@ const SuggestionBox = () => {
         </Link>
       </div>
       <ul className="py-2 flex flex-col list-none">
-        <SuggestionItem />
-        <SuggestionItem />
+        <HomeSuggestionItem />
+        <HomeSuggestionItem />
       </ul>
     </section>
   );

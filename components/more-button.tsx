@@ -18,6 +18,10 @@ const MoreButton = () => {
           console.log("hi");
           setShow(false);
         }}
+        classes={{
+          container: "w-65 md1:w-100 m-5 max-h-[calc(100%-40px)]",
+          root: "rounded-xl",
+        }}
       >
         <button
           type="button"

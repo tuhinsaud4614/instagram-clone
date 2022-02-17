@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import { IFooterClasses } from "../utils/interfaces";
+import { IFooterClasses } from "../utils";
 
 const list = [
   "Meta",

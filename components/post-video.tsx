@@ -1,7 +1,7 @@
 import { MouseEvent, useRef, useState } from "react";
 import { FaPlay } from "react-icons/fa";
-import { IResource } from "../../../utils/interfaces";
-import { AudioIcon } from "../../icons";
+import { IResource } from "../utils";
+import { AudioIcon } from "./icons";
 
 interface Props {
   video: Omit<IResource, "type">;

@@ -8,9 +8,9 @@ import {
 } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoIosCloseCircle } from "react-icons/io";
-import { SearchResultBox } from "..";
 import { Menu } from "../..";
 import { Spinner } from "../../icons";
+import SearchResultBox from "./search-result-box";
 
 const fakePromise = new Promise((res, _) => {
   setTimeout(() => {

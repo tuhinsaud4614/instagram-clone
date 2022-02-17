@@ -1,6 +1,6 @@
 import Link from "next/link";
+import { HomeSuggestionBox } from ".";
 import { Avatar, ListTile } from "..";
-import SuggestionBox from "./suggestion-box";
 
 interface Props {
   left?: string;
@@ -31,7 +31,7 @@ const RightBox = ({ left }: Props) => {
           subtitle="The Most Spicy"
         />
       </div>
-      <SuggestionBox />
+      <HomeSuggestionBox />
       <div className="pb-[2.375rem]">
         <nav className="max-w-full mb-4">
           <ul className="list-none flex flex-wrap">

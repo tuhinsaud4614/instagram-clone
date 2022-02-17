@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -8,7 +7,6 @@ import {
   SwitchAuthType,
 } from "../../../components/accounts";
 import { LoginForm, Slide } from "../../../components/login";
-import styles from "../../../styles/Login.module.css";
 
 const slides = [
   "slide-1.jpg",
@@ -26,8 +24,8 @@ const Login: NextPage = () => {
         <Head>
           <title>Login • Instagram</title>
         </Head>
-        <div className={classNames(styles.Left)}>
-          <div className={classNames(styles.LeftWrapper, "relative")}>
+        <div className={"basis-[28.375rem] h-[38.625rem] hidden md2:block"}>
+          <div className={"h-[inherit] w-[28.375rem] relative"}>
             <Image
               src="/login-image.png"
               alt="login-page"
@@ -40,12 +38,7 @@ const Login: NextPage = () => {
             </div>
           </div>
         </div>
-        <div
-          className={classNames(
-            "flex flex-col flex-grow justify-center mt-3",
-            styles.Right
-          )}
-        >
+        <div className="flex flex-col flex-grow justify-center mt-3 min-w-[21.875rem]">
           <LoginForm />
           <SwitchAuthType to="Sign up" />
           <GetTheApp />

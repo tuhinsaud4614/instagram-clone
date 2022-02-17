@@ -1,4 +1,6 @@
 export { default as HomePostCard } from "./post-card";
+export { default as HomePostCardCaption } from "./post-card/caption";
+export { default as HomePostCardHeader } from "./post-card/post-card-header";
 export { default as HomePostsBox } from "./posts-box";
 export { default as HomeRightBox } from "./right-box";
 export { default as StoryBox } from "./story-box";

@@ -1,6 +1,6 @@
 import { MdVerified } from "react-icons/md";
 import { Avatar, ListTile } from "../../..";
-import { ITag, IUser } from "../../../../utils/interfaces";
+import { ITag, IUser } from "../../../../utils";
 
 interface Props {
   type: ITag | IUser;

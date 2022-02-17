@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useState } from "react";
-import { IPost } from "../../../utils/interfaces";
-import { CommentIcon, HeartIcon, SaveIcon, ShareIcon } from "../../icons";
-import PostCardCaption from "./post-card-caption";
+import { HomePostCardCaption } from "..";
+import { PostCarousel, ShareButton } from "../..";
+import { IPost } from "../../../utils";
+import { CommentIcon, HeartIcon, SaveIcon } from "../../icons";
 import PostCardHeader from "./post-card-header";
-import PostCarousel from "./post-carousel";
 import PostCommentBox from "./post-comment-box";
 import PostLikeBox from "./post-like-box";
 
@@ -60,12 +60,7 @@ const PostCard = ({ post }: Props) => {
             </button>
           </span>
           <span className="inline-block">
-            <button
-              aria-label="Like"
-              className="flex items-center justify-center p-2 hover:opacity-50"
-            >
-              <ShareIcon className="text-neutral-800" height={24} width={24} />
-            </button>
+            <ShareButton />
           </span>
           <div className="flex-auto flex items-center justify-end">
             <button
@@ -89,7 +84,7 @@ const PostCard = ({ post }: Props) => {
         </div>
 
         <PostLikeBox post={post} />
-        <PostCardCaption caption={post.caption} />
+        <HomePostCardCaption caption={post.caption} />
         {/* comments button start */}
         <div className="px-4 mb-1 flex">
           <Link href={`/p/${post.slug}/comments`}>

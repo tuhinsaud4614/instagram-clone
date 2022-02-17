@@ -1,6 +1,6 @@
 import { Fragment, memo, useState } from "react";
 import { Menu } from "../../..";
-import { emojis } from "../../../../utils/demo-data";
+import { emojis } from "../../../../utils";
 import { EmojiIcon } from "../../../icons";
 
 const EmojiButton = ({ onChange }: { onChange?: (value: string) => void }) => {

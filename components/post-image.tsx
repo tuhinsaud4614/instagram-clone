@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IResource } from "../../../utils/interfaces";
+import { IResource } from "../utils";
 
 interface Props {
   image: Omit<IResource, "type">;

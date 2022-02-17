@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { ReactNode } from "react";
 import { Portal } from ".";
 
@@ -7,27 +8,48 @@ interface Props {
   footer?: ReactNode;
   show: boolean;
   onClose?(): void;
+  classes?: {
+    backdrop?: string;
+    container?: string;
+    root?: string;
+    content?: string;
+  };
 }
 
-const Dialog = ({ header, children, footer, show = false, onClose }: Props) => {
+const Dialog = ({
+  header,
+  children,
+  classes,
+  footer,
+  show = false,
+  onClose,
+}: Props) => {
   return (
     <Portal>
       {show && (
         <div
-          className="bg-black/65 fixed inset-0 flex justify-center items-center z-100 animate-dialog"
+          className={classNames(
+            "bg-black/65 fixed inset-0 flex justify-center items-center z-100",
+            classes?.backdrop
+          )}
           onClick={(e) => {
             e.stopPropagation();
             onClose && onClose();
           }}
         >
           <div
-            className={"w-65 md1:w-100 m-5 max-h-[calc(100%-40px)]"}
+            className={classNames("animate-dialog", classes?.container)}
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
-            <div className="bg-white rounded-xl overflow-hidden max-h-full">
-              <div className=" flex flex-col">
+            <div
+              className={classNames(
+                "bg-white overflow-hidden max-h-full",
+                classes?.root
+              )}
+            >
+              <div className={classNames("flex flex-col", classes?.content)}>
                 {header}
                 {children}
                 {footer}

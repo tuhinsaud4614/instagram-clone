@@ -16,7 +16,7 @@
   }
 
   .btn-text-primary {
-    @apply text-accent bg-white text-sm font-semibold text-center active:text-accent/70 disabled:bg-accent/30;
+    @apply text-accent bg-white text-sm font-semibold text-center active:text-accent/70 disabled:text-accent/30;
   }
 
   .back-link {

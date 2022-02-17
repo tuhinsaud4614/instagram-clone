@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Avatar, ListTile, ShortProfile } from "..";
-import { useShortProfile } from "../../hooks";
+import { useShortProfile } from "../../hooks/dom-hooks";
 
 const SuggestionItem = () => {
   const {

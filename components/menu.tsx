@@ -1,9 +1,7 @@
 import classNames from "classnames";
 import { memo, ReactNode, useEffect, useRef, useState } from "react";
 import { Portal } from ".";
-import { useIsomorphicLayoutEffect } from "../utils";
-import { IAnchorOrigin } from "../utils/interfaces";
-
+import { IAnchorOrigin, useIsomorphicLayoutEffect } from "../utils";
 const ARROW_SIZE = 14;
 
 const getPositions = (
@@ -73,7 +71,7 @@ interface Props {
   };
 }
 
-const Menu = ({
+const MenuComponent = ({
   open = false,
   anchorEle,
   onClose,
@@ -165,5 +163,5 @@ const Menu = ({
     </Portal>
   );
 };
-
-export default memo(Menu, (prev, next) => prev.open === next.open);
+const Menu = memo(MenuComponent, (prev, next) => prev.open === next.open);
+export default Menu;

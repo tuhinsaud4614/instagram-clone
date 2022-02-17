@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Avatar, ListTile, MoreButton, ShortProfile } from "../..";
-import { useShortProfile } from "../../../hooks";
-import { IUser } from "../../../utils/interfaces";
+import { useShortProfile } from "../../../hooks/dom-hooks";
+import { IUser } from "../../../utils";
 
 interface Props {
   owner: IUser;

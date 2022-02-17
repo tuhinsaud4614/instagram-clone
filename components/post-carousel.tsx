@@ -2,9 +2,8 @@ import { useRef } from "react";
 import { IoChevronBackCircle, IoChevronForwardCircle } from "react-icons/io5";
 import { Navigation, Pagination, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { IResource } from "../../../utils/interfaces";
-import PostImage from "./post-image";
-import PostVideo from "./post-video";
+import { PostImage, PostVideo } from ".";
+import { IResource } from "../utils";
 
 interface Props {
   resources: IResource[];

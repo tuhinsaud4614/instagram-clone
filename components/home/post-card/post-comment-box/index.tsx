@@ -132,7 +132,7 @@ const PostCommentBox = () => {
             setQuery(queryValue);
           }}
         />
-        <button type="submit" className="btn-text-primary">
+        <button type="submit" className="btn-text-primary" disabled={!value}>
           Post
         </button>
       </form>

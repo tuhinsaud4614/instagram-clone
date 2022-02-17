@@ -1,4 +1,4 @@
-import { SearchItem } from "..";
+import SearchItem from "./search-item";
 
 const histories: {
   id: string;
